@@ -1,0 +1,12 @@
+Package: RadaFDR
+Title: R port of adaFDR package
+Version: 0.1.5
+Authors@R: c(person("Martin", "Zhang", email = "martinjzhang@gmail.com",
+                  role = c("aut", "cre")),
+            person("Fei", "Xia", email = "feixia@stanford.edu",
+                  role = c("aut", "cre")))
+Description: A fast and covariate-adaptive method for multiple hypothesis testing.
+Depends: R (>= 3.0.0)
+Imports: reticulate
+License: MIT
+LazyData: true
