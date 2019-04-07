@@ -1,4 +1,4 @@
-Radafdr_test <- function(p_input, x_input, K, alpha, n_itr, qt_norm, verbose, output_folder,
+adafdr_test <- function(p_input, x_input, K, alpha, n_itr, qt_norm, verbose, output_folder,
                          random_state, single_core, fast_mode, n_full, covariate_type, h)
 {
     if (missing(K)) {K=5L}
@@ -19,6 +19,31 @@ Radafdr_test <- function(p_input, x_input, K, alpha, n_itr, qt_norm, verbose, ou
     random_state=random_state, single_core=single_core, fast_mode=fast_mode, n_full=n_full, covariate_type=covariate_type,
     h=h, output_folder=output_folder)
 }
+
+adafdr_retest <- function(res_adafdr, alpha, n_full, output_folder) {
+
+    if (missing(alpha)) {alpha=0.1}
+    if (missing(n_full)) {n_full=NULL}
+    if (missing(output_folder)) {output_folder=NULL}
+    md <- import('adafdr.method')
+    md$adafdr_retest(res_adafdr, alpha=alpha, n_full=n_full, output_folder=output_folder)
+}
+
+adafdr_explore <- function(p_input, x_input, alpha, output_folder, n_full, covariate_type, h, vis_dim)
+{
+    if (missing(alpha)) {alpha=0.1}
+    if (missing(covariate_type)) {covariate_type=NULL}
+    if (missing(h)) {h=NULL}
+    if (missing(output_folder)) {output_folder=NULL}
+    if (missing(n_full)) {n_full=NULL}
+    if (missing(vis_dim)) {vis_dim=NULL}
+
+    md <- import('adafdr.method')
+    md$adafdr_explore(p_input, x_input, alpha=alpha, n_full=n_full, output_folder=output_folder, covariate_type=covariate_type,
+    h=h, vis_dim=vis_dim)
+}
+
+
 
 data_airway <- function() {
     dl <- import('adafdr.data_loader', convert=FALSE)

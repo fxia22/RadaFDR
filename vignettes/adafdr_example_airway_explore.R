@@ -6,8 +6,4 @@ data = data_airway()
 p = data[0]
 x = data[1]
 
-res <- Radafdr_test(p, x, fast_mode=TRUE)
-res$n_rej
-
-res <- Radafdr_test(p, x, fast_mode=FALSE)
-res$n_rej
+adafdr_explore(p, x, output_folder='test')
