@@ -2,6 +2,10 @@
 
 ## Installation
 
+First, install [adafdr](https://github.com/martinjzhang/adafdr) and put it in a virtual environment or conda environment.
+
+Then install the R package for wrapper functions.
+
 Dependency: `reticulate`
 ```
 git clone https://github.com/fxia22/RadaFDR.git
