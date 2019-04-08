@@ -1,0 +1,36 @@
+---
+title: "AdaFDR R example"
+author: Fei Xia
+date: Apr 8, 2019
+output:
+  md_document:
+    variant: markdown_github
+---
+
+The first step is to import libraries.
+
+```{R include=TRUE}
+library(reticulate)
+use_condaenv('py36')
+library(RadaFDR)
+```
+
+Load the dataset.
+
+```{R include=TRUE}
+data = data_airway()
+p = data[0]
+x = data[1]
+```
+
+Fast mode adafdr test:
+```{R include=TRUE}
+res <- adafdr_test(p, x, fast_mode=TRUE)
+res$n_rej
+```
+
+Full adafdr test (with optimization steps)
+```{R include=TRUE}
+res <- adafdr_test(p, x, fast_mode=FALSE)
+res$n_rej
+```
