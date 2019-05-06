@@ -9,7 +9,7 @@ Then install the R package for wrapper functions.
 Dependency: `reticulate`
 ```
 git clone https://github.com/fxia22/RadaFDR.git
-Rscript install.R
+Rscript ./RadaFDR/install.R
 ```
 
 Or install from github:
