@@ -15,7 +15,7 @@ adafdr_test <- function(p_input, x_input, K, alpha, n_itr, qt_norm, verbose, out
     if (missing(output_folder)) {output_folder=NULL}
 
     md <- import('adafdr.method')
-    md$adafdr_test(p, x, fast_mode=fast_mode, K=K, alpha=alpha, n_itr=n_itr, qt_norm=qt_norm, verbose=verbose,
+    md$adafdr_test(p_input, x_input, fast_mode=fast_mode, K=K, alpha=alpha, n_itr=n_itr, qt_norm=qt_norm, verbose=verbose,
     random_state=random_state, single_core=single_core, fast_mode=fast_mode, n_full=n_full, covariate_type=covariate_type,
     h=h, output_folder=output_folder)
 }
@@ -25,6 +25,7 @@ adafdr_retest <- function(res_adafdr, alpha, n_full, output_folder) {
     if (missing(alpha)) {alpha=0.1}
     if (missing(n_full)) {n_full=NULL}
     if (missing(output_folder)) {output_folder=NULL}
+
     md <- import('adafdr.method')
     md$adafdr_retest(res_adafdr, alpha=alpha, n_full=n_full, output_folder=output_folder)
 }
@@ -43,8 +44,6 @@ adafdr_explore <- function(p_input, x_input, alpha, output_folder, n_full, covar
     h=h, vis_dim=vis_dim)
 }
 
-
-
 data_airway <- function() {
     dl <- import('adafdr.data_loader', convert=FALSE)
     dl$data_airway()
@@ -60,18 +59,15 @@ data_pasilla <- function() {
     dl$data_pasilla()
 }
 
-
 data_small_gtex <- function() {
     dl <- import('adafdr.data_loader', convert=FALSE)
     dl$data_small_gtex()
 }
 
-
 data_small_gtex_chr21 <- function() {
     dl <- import('adafdr.data_loader', convert=FALSE)
     dl$data_small_gtex_chr21()
 }
-
 
 toy_data_1d <- function() {
     dl <- import('adafdr.data_loader', convert=FALSE)
