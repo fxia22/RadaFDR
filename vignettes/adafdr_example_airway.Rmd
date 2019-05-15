@@ -23,6 +23,12 @@ p = data[0]
 x = data[1]
 ```
 
+adafdr_explore
+```{R include=TRUE}
+adafdr_explore(p, x, output_folder='test')
+```
+
+
 Fast mode adafdr test:
 ```{R include=TRUE}
 res <- adafdr_test(p, x, fast_mode=TRUE)
@@ -33,4 +39,13 @@ Full adafdr test (with optimization steps)
 ```{R include=TRUE}
 res <- adafdr_test(p, x, fast_mode=FALSE)
 res$n_rej
+```
+
+Full adafdr retest
+```{R include=TRUE}
+res <- adafdr_test(p, x, fast_mode=TRUE)
+temp <- adafdr_retest(res, alpha=0.02)
+res_compare <- adafdr_test(p, x, alpha=0.02, fast_mode=TRUE)
+print('number of differences')
+sum(temp$decision != res_compare$decision)
 ```
