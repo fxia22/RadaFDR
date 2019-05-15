@@ -19,8 +19,8 @@ Load the dataset.
 
 ```{R include=TRUE}
 data = data_airway()
-p = data[0]
-x = data[1]
+p = as.matrix(data[0])
+x = as.matrix(data[1])
 ```
 
 adafdr_explore
@@ -32,6 +32,7 @@ adafdr_explore(p, x, output_folder='test')
 Fast mode adafdr test:
 ```{R include=TRUE}
 res <- adafdr_test(p, x, fast_mode=TRUE)
+print('number of discoveries')
 res$n_rej
 ```
 
