@@ -36,6 +36,11 @@ adafdr_explore: function(p_input, x_input, alpha=0.1, output_folder=NULL, n_full
 `adafdr_test` runs AdaFDR as described in the paper, `adafdr_retest` retest a set of hypothesis with a different threshold. 
 `adafdr_explore` visualize the features and save it to a folder.
 
+For input format: 
+- `p_input` is (n,) matrix. 
+- `x_input` is (n, d) matrix.
+- `res_adafdr` is the output of 'adafdr_test'.
+
 <!---
 Only `p_input`, `x_input` and `res_adafdr` are required inputs, if other input are not supplied, the following default values will be used:
 ```
